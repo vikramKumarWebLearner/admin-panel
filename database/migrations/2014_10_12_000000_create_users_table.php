@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
             $table->string('profile_image')->nullable()->default('user_logo.jpeg');
+            $table->dateTime('deleted_at', 0)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
